@@ -8,28 +8,19 @@ detectButton.addEventListener("click", () => {
   detecting = !detecting;
 
   if (detecting) {
-    // 감지 ON
     statusText.textContent = "Detection ON";
     detectButton.textContent = "⏹ Stop Detection";
 
-    // 예시: 위험 감지 시뮬레이션
-    setTimeout(triggerAlert, 2000);
+    // 시연용 위험 감지
+    setTimeout(() => {
+      if (detecting) triggerAlert();
+    }, 2500);
 
   } else {
-    // 감지 OFF
     statusText.textContent = "Detection OFF";
     detectButton.textContent = "🎙 Start Detection";
     alertBox.classList.add("hidden");
   }
 });
 
-function triggerAlert() {
-  if (!detecting) return;
-
-  alertBox.classList.remove("hidden");
-
-  // 📳 진동 (모바일에서만 작동)
-  if (navigator.vibrate) {
-    navigator.vibrate([200, 100, 200, 100, 400]);
-  }
-}
+function triggerAlert
