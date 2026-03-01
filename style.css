@@ -77,6 +77,50 @@ body {
 .guide-card {
   background: #1e293b;
   margin: 15px auto;
+
+  /* 헤더를 가로 정렬 */
+.app-header.horizontal {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+/* 로고 + 텍스트 묶음 */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* 아이콘 */
+.logo-icon {
+  flex-shrink: 0;
+}
+
+/* 텍스트 영역 */
+.logo-text-group {
+  text-align: left;
+}
+
+/* 로고 텍스트 */
+.logo-text {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* 강조 색 */
+.logo-text .accent {
+  color: #ff6b00;
+}
+
+/* 서브타이틀 */
+.subtitle {
+  margin: 2px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
   padding: 15px;
   border-radius: 12px;
   max-width: 400px;
