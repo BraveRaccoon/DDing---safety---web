@@ -38,12 +38,24 @@ body {
   justify-content: space-between;
 }
 
+/* ===== 로고 (아이콘 + 텍스트) ===== */
 .logo {
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
+.logo-icon {
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
 
 .nav {
   display: flex;
