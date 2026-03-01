@@ -7,14 +7,42 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="top-bar">
-    <div class="logo">DDing</div>
-    <nav class="nav">
-      <a href="#" class="nav-item active">WATCH</a>
-      <a href="#history" class="nav-item">HISTORY</a>
-      <a href="guide.html" class="nav-item">GUIDE</a>
-    </nav>
-  </header>
+<header class="top-bar">
+  <div class="logo">
+    <!-- 눈 모양 아이콘 -->
+    <svg
+      class="logo-icon"
+      width="32"
+      height="32"
+      viewBox="0 0 100 100"
+      aria-hidden="true"
+    >
+      <circle
+        cx="50"
+        cy="50"
+        r="42"
+        stroke="#ff7a1a"
+        stroke-width="6"
+        fill="none"
+      />
+      <circle cx="50" cy="50" r="6" fill="#ff7a1a" />
+      <path
+        d="M50 10 Q90 50 50 90 Q10 50 50 10 Z"
+        stroke="#ff7a1a"
+        stroke-width="4"
+        fill="none"
+      />
+    </svg>
+
+    <!-- 텍스트 로고 -->
+    <span class="logo-text">DDing</span>
+  </div>
+
+  <nav class="nav">
+    ...
+  </nav>
+</header>
+
 
   <main class="layout">
     <!-- 왼쪽: 상태/레이더 -->
