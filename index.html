@@ -7,69 +7,51 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand">
-      <span class="brand-logo">DDing</span>
-      <span class="brand-tagline">Visual Safety Awareness Tool</span>
-    </div>
+  <header class="top-bar">
+    <div class="logo">DDING</div>
     <nav class="nav">
-      <a href="index.html" class="nav-link nav-link--active">HOME</a>
-      <a href="guide.html" class="nav-link">GUIDE</a>
+      <a href="#" class="nav-item active">WATCH</a>
+      <a href="#history" class="nav-item">HISTORY</a>
+      <a href="guide.html" class="nav-item">GUIDE</a>
     </nav>
   </header>
 
-  <main class="hero">
-    <section class="hero-content">
-      <h1 class="hero-title">Stay aware with DDing</h1>
-      <p class="hero-description">
-        화면을 볼 때 주변 위험을 **햅틱 알림**으로 알려주는 시각 안전 인지 도구입니다.
-      </p>
-
-      <div class="status-block">
-        <span class="status-label">Status</span>
-        <div class="status-indicator status-indicator--off" id="statusIndicator">
-          <span class="status-dot"></span>
-          <span class="status-text" id="statusText">Detection OFF</span>
-        </div>
+  <main class="layout">
+    <!-- 왼쪽: 상태/레이더 -->
+    <section class="panel system-panel">
+      <div class="panel-header">
+        <span class="panel-title">SYSTEM STANDBY</span>
+        <span class="badge badge-strong">VIBRATION: STRONG</span>
       </div>
 
-      <button class="primary-button" id="startButton">
-        <span class="primary-button__icon">🔔</span>
-        <span class="primary-button__text">Start Detection</span>
+      <div class="radar-wrapper">
+        <div class="radar-circle outer"></div>
+        <div class="radar-circle middle"></div>
+        <div class="radar-circle inner"></div>
+        <div class="radar-center">RADAR OFFLINE</div>
+      </div>
+
+      <button id="startButton" class="start-btn">
+        START
       </button>
+
+      <p class="helper-text">
+        감지를 시작하려면 버튼을 누르세요
+      </p>
+      <p class="sub-helper">
+        안전한 보행을 돕는 예비 신호 도구
+      </p>
+    </section>
+
+    <!-- 오른쪽: 설명 -->
+    <section class="panel info-panel">
+      <h1 class="title">Stay aware with DDing</h1>
+      <p class="desc">
+        화면을 볼 때 주변 위험을 **햅틱 알림**으로 알려주는 시각 안전 인지 도구입니다.
+      </p>
+      <p class="status">Status: <span id="statusText">Detection OFF</span></p>
+      <p class="footer-copy">© 2026 DDing</p>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p class="footer-text">
-      DDing 제공: 시각 안전 인지를 지원하는 웹 기반 프로토타입입니다.
-    </p>
-    <p class="footer-meta">
-      © 2026 DDing
-    </p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
-  
-</html>
 
-<header class="app-header horizontal">
-  <div class="logo-wrapper">
-    <!-- 로고 아이콘 -->
-    <svg class="logo-icon" width="48" height="48" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="42" stroke="#ff6b00" stroke-width="6" fill="none"/>
-      <circle cx="50" cy="50" r="6" fill="#ff6b00"/>
-      <path d="M50 10 Q90 50 50 90 Q10 50 50 10 Z"
-            stroke="#ff6b00" stroke-width="4" fill="none"/>
-    </svg>
-
-    <!-- 텍스트 로고 -->
-    <div class="logo-text-group">
-      <h1 class="logo-text">
-        <span class="accent">DD</span>ing
-      </h1>
-      <p class="subtitle">Visual Safety Awareness Tool</p>
-    </div>
-  </div>
-</header>
