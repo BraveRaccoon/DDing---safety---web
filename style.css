@@ -260,3 +260,141 @@ body {
     margin-top: 8px;
   }
 }
+
+/* ===== GUIDE 페이지 ===== */
+.guide-panel .guide-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.guide-title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.guide-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: rgba(255, 122, 26, 0.2);
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.guide-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px;
+  background: rgba(255, 122, 26, 0.08);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 122, 26, 0.2);
+  margin-bottom: 12px;
+}
+
+.guide-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.guide-card h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.guide-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.quick-tips {
+  margin-top: 28px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.tip-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #1b1209;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ===== HISTORY 페이지 ===== */
+.log-panel .panel-header {
+  margin-bottom: 20px;
+}
+
+.log-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.log-item:last-child {
+  border-bottom: none;
+}
+
+.log-time {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.log-status {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.log-status.active {
+  background: rgba(57, 229, 143, 0.2);
+  color: #18b56a;
+  border: 1px solid rgba(24, 181, 106, 0.4);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 24px 0;
+  background: rgba(255, 122, 26, 0.08);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 122, 26, 0.2);
+}
+
+.stat-number {
+  display: block;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
