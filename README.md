@@ -27,9 +27,9 @@
 4. SPA 네비게이션 구현
 
 
-👤 개발자: [장서윤]
+👤: 장서윤
 
-📧: [rachelj1116@naver.com]
+📧: rachelj1116@naver.com
 
 🎓: 고려대학교 3학년
 
