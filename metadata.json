@@ -1,0 +1,7 @@
+{
+  "name": "DDing",
+  "description": "진동을 통해 시각적 인지를 촉발하는 청각장애인용 위험 보조 도구",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
