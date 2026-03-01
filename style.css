@@ -398,3 +398,46 @@ body {
   color: var(--text-sub);
 }
 
+/* ===== 가이드 카드 정렬 수정 ===== */
+.guide-panel {
+  padding: 26px;
+}
+
+.guide-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 22px;
+  background: rgba(255, 122, 26, 0.08);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 122, 26, 0.25);
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.guide-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.guide-card p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+/* ===== 오른쪽 패널 텍스트 정렬 ===== */
+.info-panel .desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  text-align: left;  /* 왼쪽 정렬로 통일 */
+  max-width: none;   /* 너비 제한 풀기 */
+  padding-left: 2px; /* 아주 살짝 들여쓰기 */
+}
+
+.info-panel {
+  padding: 26px;
+}
