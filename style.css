@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DDing – Safety Awareness Tool</title>
+
+  <!-- 스타일 -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 상단 헤더 -->
+  <header class="app-header">
+    <h1 class="logo">DDing</h1>
+    <p class="subtitle">Visual Safety Awareness Tool</p>
+  </header>
+
+  <!-- 메인 영역 -->
+  <main class="main-area">
+
+    <!-- 감지 상태 -->
+    <section class="status">
+      <p class="status-label">Status</p>
+      <p class="status-value" id="statusText">Detection OFF</p>
+    </section>
+
+    <!-- 감지 버튼 -->
+    <button class="detect-button" id="detectButton">
+      🎙 Start Detection
+    </button>
+
+    <!-- 위험 알림 -->
+    <section class="alert hidden" id="alertBox">
+      <p class="alert-text">LOOK AROUND</p>
+      <p class="alert-subtext">
+        Potential danger detected.<br />
+        Please check your surroundings.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- 하단 안내 -->
+  <footer class="app-footer">
+    <p>
+      DDing provides haptic alerts to support visual awareness.<br />
+      This is a web-based prototype.
+    </p>
+  </footer>
+
+  <!-- 스크립트 -->
+  <script src="script.js"></script>
+</body>
+</html>
