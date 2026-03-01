@@ -1,26 +1,24 @@
-const detectButton = document.getElementById("detectButton");
+const button = document.getElementById("detectButton");
 const statusText = document.getElementById("statusText");
 const alertBox = document.getElementById("alertBox");
 
-let detecting = false;
+let isDetecting = false;
 
-detectButton.addEventListener("click", () => {
-  detecting = !detecting;
+button.addEventListener("click", () => {
+  isDetecting = !isDetecting;
 
-  if (detecting) {
+  if (isDetecting) {
     statusText.textContent = "Detection ON";
-    detectButton.textContent = "⏹ Stop Detection";
+    button.textContent = "⏹ Stop Detection";
 
-    // 시연용 위험 감지
     setTimeout(() => {
-      if (detecting) triggerAlert();
-    }, 2500);
+      alertBox.classList.remove("hidden");
+      navigator.vibrate([200, 100, 200]);
+    }, 2000);
 
   } else {
     statusText.textContent = "Detection OFF";
-    detectButton.textContent = "🎙 Start Detection";
+    button.textContent = "🎙 Start Detection";
     alertBox.classList.add("hidden");
   }
 });
-
-function triggerAlert
