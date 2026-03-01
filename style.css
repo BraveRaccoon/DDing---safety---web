@@ -1,18 +1,13 @@
-/* ===== 색 · 폰트 기본값 ===== */
+/* ===== 기본 컬러 / 폰트 ===== */
 :root {
-  --color-bg: #050b18;
-  --color-panel: #0b1020;
-  --color-primary: #ff7a1a;
-  --color-primary-soft: #ffb36a;
-  --color-primary-hover: #ff923e;
-  --color-text: #f5f5f5;
-  --color-muted: #9aa3b5;
-  --color-border: #283143;
-  --color-status-off: #7b8291;
-  --color-status-on: #21c26a;
-
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, sans-serif;
+  --bg-main: #050608;
+  --bg-panel: #101219;
+  --bg-panel-soft: #151823;
+  --accent: #ff7a1a;
+  --accent-soft: #ffb36a;
+  --text-main: #f5f6f9;
+  --text-sub: #a1a7bb;
+  --border-subtle: #262a38;
 }
 
 *,
@@ -21,230 +16,235 @@
   box-sizing: border-box;
 }
 
-/* ===== 전체 레이아웃 ===== */
-
 body {
   margin: 0;
   min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  color: var(--text-main);
   background:
-    radial-gradient(circle at top, #1b2340 0, #050b18 55%) fixed,
-    #050b18;
-  color: var(--color-text);
-  font-family: var(--font-sans);
-  display: flex;
-  flex-direction: column;
+    radial-gradient(circle at top, #202331 0, #050608 55%) fixed,
+    #050608;
 }
 
-/* ===== 상단 헤더 (로고 + 네비게이션) ===== */
+/* ===== 상단 바 ===== */
 
-.site-header {
-  max-width: 960px;
-  width: 100%;
+.top-bar {
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 20px 24px;
+  padding: 18px 28px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
+.logo {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-primary);
-}
-
-.brand-tagline {
-  font-size: 12px;
-  color: var(--color-muted);
 }
 
 .nav {
   display: flex;
-  gap: 16px;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
 }
 
-.nav-link {
-  font-size: 13px;
+.nav-item {
+  color: #7f8597;
   text-decoration: none;
-  color: var(--color-muted);
-  letter-spacing: 0.12em;
-}
-
-.nav-link--active {
-  color: var(--color-primary);
-  font-weight: 600;
   position: relative;
 }
 
-.nav-link--active::after {
+.nav-item.active {
+  color: var(--accent);
+}
+
+.nav-item.active::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
   width: 100%;
   height: 2px;
-  background-color: var(--color-primary);
   border-radius: 999px;
+  background-color: var(--accent);
 }
 
-/* ===== 메인 히어로 섹션 ===== */
+/* ===== 메인 레이아웃 ===== */
 
-.hero {
-  flex: 1;
+.layout {
+  max-width: 1040px;
+  margin: 0 auto 40px;
+  padding: 12px 28px 32px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+/* 공통 패널 스타일 */
+.panel {
+  background: radial-gradient(circle at top, #181b28 0, var(--bg-panel) 52%);
+  border-radius: 26px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.7);
+  padding: 22px 22px 26px;
+}
+
+/* ===== 왼쪽 패널 (레이더) ===== */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-bottom: 16px;
+}
+
+.panel-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--accent-soft);
+  margin-right: 8px;
+  box-shadow: 0 0 10px rgba(255, 179, 106, 0.8);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 179, 106, 0.6);
+  color: var(--accent-soft);
+  background: rgba(20, 22, 32, 0.7);
+  font-size: 10px;
+}
+
+/* 레이더 박스 */
+.radar-wrapper {
+  position: relative;
+  margin-top: 6px;
+  margin-bottom: 26px;
+  height: 220px;
+  border-radius: 24px;
+  background: radial-gradient(circle at center, #181b28 0, #10121a 70%);
+  border: 1px solid rgba(60, 64, 83, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
 }
 
-.hero-content {
-  max-width: 520px;
-  width: 100%;
-  text-align: center;
-  padding: 32px 28px 40px;
-  border-radius: 24px;
-  background: linear-gradient(145deg, #0b1020, #050815);
-  border: 1px solid rgba(40, 49, 67, 0.9);
-  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.7);
+.radar-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 154, 63, 0.25);
 }
 
-.hero-title {
-  font-size: 28px;
-  margin-bottom: 12px;
+.radar-circle.outer {
+  width: 190px;
+  height: 190px;
 }
 
-.hero-description {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-muted);
-  margin-bottom: 28px;
+.radar-circle.middle {
+  width: 132px;
+  height: 132px;
 }
 
-/* ===== 상태 표시 pill ===== */
-
-.status-block {
-  margin-bottom: 20px;
+.radar-circle.inner {
+  width: 76px;
+  height: 76px;
+  border-style: solid;
 }
 
-.status-label {
+.radar-center {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--text-sub);
+}
+
+/* START 버튼 */
+.start-btn {
   display: block;
+  margin: 0 auto 16px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: radial-gradient(circle at top, var(--accent-soft), var(--accent));
+  box-shadow:
+    0 0 30px rgba(255, 122, 26, 0.7),
+    0 22px 46px rgba(0, 0, 0, 0.85);
+  color: #1b1209;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  font-size: 11px;
+}
+
+.start-btn.active {
+  background: radial-gradient(circle at top, #39e58f, #18b56a);
+  box-shadow:
+    0 0 30px rgba(24, 181, 106, 0.7),
+    0 22px 46px rgba(0, 0, 0, 0.85);
+}
+
+.helper-text {
+  text-align: center;
   font-size: 13px;
-  color: var(--color-muted);
   margin-bottom: 6px;
 }
 
-.status-indicator {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--color-border);
-  font-size: 14px;
-  background: rgba(10, 16, 32, 0.8);
-  backdrop-filter: blur(10px);
-}
-
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background-color: var(--color-status-off);
-}
-
-/* ON 상태일 때 JS가 이 클래스를 붙임 */
-.status-indicator--on .status-dot {
-  background-color: var(--color-status-on);
-}
-
-.status-indicator--on .status-text {
-  color: var(--color-status-on);
-}
-
-/* ===== 메인 버튼 ===== */
-
-.primary-button {
-  margin-top: 8px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  border: none;
-  background: radial-gradient(circle at top, var(--color-primary-soft), var(--color-primary));
-  color: #1b1209;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-  transition:
-    background 0.15s ease,
-    transform 0.1s ease,
-    box-shadow 0.1s ease;
-}
-
-.primary-button:hover {
-  background: radial-gradient(circle at top, #ffd19c, var(--color-primary-hover));
-  transform: translateY(-1px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
-}
-
-.primary-button:active {
-  transform: translateY(0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.55);
-}
-
-.primary-button__icon {
-  font-size: 18px;
-}
-
-.primary-button__text {
-  letter-spacing: 0.04em;
-}
-
-/* ===== 푸터 ===== */
-
-.site-footer {
-  border-top: 1px solid var(--color-border);
-  padding: 16px 24px 20px;
+.sub-helper {
   text-align: center;
-  color: var(--color-muted);
-  font-size: 12px;
+  font-size: 11px;
+  color: var(--text-sub);
 }
 
-.footer-text {
-  margin: 0 0 4px;
+/* ===== 오른쪽 패널 ===== */
+
+.info-panel .title {
+  margin: 4px 0 10px;
+  font-size: 26px;
 }
 
-.footer-meta {
-  margin: 0;
+.info-panel .desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-sub);
+  max-width: 380px;
+}
+
+.status {
+  margin-top: 26px;
+  font-size: 13px;
+}
+
+#statusText {
+  color: var(--accent-soft);
+}
+
+.footer-copy {
+  margin-top: 80px;
+  font-size: 11px;
+  color: var(--text-sub);
 }
 
 /* ===== 반응형 ===== */
 
-@media (max-width: 600px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+@media (max-width: 860px) {
+  .layout {
+    grid-template-columns: 1fr;
   }
 
-  .hero-content {
-    padding: 26px 20px 32px;
-  }
-
-  .hero-title {
-    font-size: 24px;
-  }
-
-  .hero-description {
-    font-size: 14px;
+  .panel {
+    margin-top: 8px;
   }
 }
