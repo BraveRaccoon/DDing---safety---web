@@ -1,110 +1,49 @@
-/* 기본 초기화 */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DDing – Safety Awareness Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-body {
-  background-color: #0f172a; /* 딥 인디고 */
-  color: #ffffff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+<header class="app-header">
+  <h1 class="logo">DDing</h1>
+  <p class="subtitle">Visual Safety Awareness Tool</p>
+</header>
 
-/* 헤더 */
-.app-header {
-  padding: 20px;
-  border-bottom: 1px solid #1e293b;
-}
+<nav class="nav">
+  <a class="active">HOME</a>
+  <a href="guide.html">GUIDE</a>
+</nav>
 
-.logo {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
+<main class="main-area">
 
-.subtitle {
-  font-size: 14px;
-  color: #94a3b8;
-}
+  <section class="status">
+    <p class="status-label">Status</p>
+    <p class="status-value" id="statusText">Detection OFF</p>
+  </section>
 
-/* 메인 */
-.main-area {
-  flex: 1;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
+  <button class="detect-button" id="detectButton">
+    🎙 Start Detection
+  </button>
 
-/* 상태 */
-.status-label {
-  font-size: 12px;
-  color: #94a3b8;
-  margin-bottom: 4px;
-}
+  <section class="alert hidden" id="alertBox">
+    <p class="alert-text">LOOK AROUND</p>
+    <p class="alert-subtext">
+      Potential danger detected.<br />
+      Please check your surroundings.
+    </p>
+  </section>
 
-.status-value {
-  font-size: 18px;
-  font-weight: 600;
-}
+</main>
 
-/* 감지 버튼 */
-.detect-button {
-  background-color: #ff6b00; /* Safety Orange */
-  color: #000;
-  border: none;
-  border-radius: 12px;
-  padding: 18px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-}
+<footer class="app-footer">
+  DDing provides haptic alerts to support visual awareness.<br />
+  This is a web-based prototype.
+</footer>
 
-.detect-button:active {
-  transform: scale(0.98);
-}
-
-/* 경고 박스 */
-.alert {
-  border: 2px solid #ff6b00;
-  border-radius: 16px;
-  padding: 24px;
-  text-align: center;
-  animation: pulse 1.5s infinite;
-}
-
-.alert-text {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-
-.alert-subtext {
-  font-size: 14px;
-  color: #fcd34d;
-}
-
-.hidden {
-  display: none;
-}
-
-/* 하단 */
-.app-footer {
-  padding: 16px;
-  font-size: 12px;
-  color: #94a3b8;
-  text-align: center;
-  border-top: 1px solid #1e293b;
-}
-
-/* 애니메이션 */
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(255,107,0,0.7); }
-  70% { box-shadow: 0 0 0 12px rgba(255,107,0,0); }
-  100% { box-shadow: 0 0 0 0 rgba(255,107,0,0); }
-}
+<script src="script.js"></script>
+</body>
+</html>
