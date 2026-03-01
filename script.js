@@ -18,6 +18,27 @@ button.addEventListener("click", () => {
 
   } else {
     statusText.textContent = "Detection OFF";
+
+    const startButton = document.getElementById("startButton");
+const statusIndicator = document.getElementById("statusIndicator");
+const statusText = document.getElementById("statusText");
+
+let isDetecting = false;
+
+startButton.addEventListener("click", () => {
+  isDetecting = !isDetecting;
+
+  if (isDetecting) {
+    statusIndicator.classList.add("status-indicator--on");
+    statusText.textContent = "Detection ON";
+    startButton.textContent = "Stop Detection";
+  } else {
+    statusIndicator.classList.remove("status-indicator--on");
+    statusText.textContent = "Detection OFF";
+    startButton.textContent = "Start Detection";
+  }
+});
+
     button.textContent = "🎙 Start Detection";
     alertBox.classList.add("hidden");
   }
