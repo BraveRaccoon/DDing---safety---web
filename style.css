@@ -441,3 +441,40 @@ body {
 .info-panel {
   padding: 26px;
 }
+
+/* ===== 가이드 페이지 최종 정렬 수정 (강제 우선순위) ===== */
+.guide-panel {
+  padding: 28px !important;
+}
+
+.guide-panel .guide-card {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  padding: 24px !important;
+  margin-bottom: 18px !important;
+  text-align: left !important;
+}
+
+.guide-panel .guide-card h3 {
+  margin: 0 0 8px 0 !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.guide-panel .guide-card p {
+  margin: 0 !important;
+  line-height: 1.55 !important;
+}
+
+/* 오른쪽 패널 텍스트 왼쪽 정렬 */
+.info-panel {
+  padding: 28px !important;
+}
+
+.info-panel .desc {
+  text-align: left !important;
+  max-width: none !important;
+  padding-left: 4px !important;
+  margin-bottom: 32px !important;
+}
